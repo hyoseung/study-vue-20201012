@@ -45,7 +45,7 @@ export default {
       _.debounce = setTimeout(() => {
         if(input.length == 0) vm.listData = vm.propsUserList;
         else vm.listData = vm.propsUserList.filter((v) => (v.name.toLowerCase().includes(input.toLowerCase()))) 
-      }, 500);
+      }, 1000);
       
     }
   }
@@ -54,46 +54,48 @@ export default {
 
 <style scoped>
 .userList {
-  height: 400px
-}
-#list {
-  width: 900px;
-  font: 13px "verdana";
+  height: 550px;
   margin: auto;
 }
+#list {
+  margin: 10px auto;
+  border: 1px solid;
+  border-collapse: collapse;
+}
 #list thead tr {
-  color: yellow;
-  background-color: purple;
+  background-color: blanchedalmond;
 }
 #list th:nth-child(5n + 1),
 #list td:nth-child(5n + 1) {
-  width: 200px;
+  width: 100px;
 }
 #list th:nth-child(5n + 2),
 #list td:nth-child(5n + 2) {
-  width: 150px;
+  width: 200px;
 }
 #list th:nth-child(5n + 3),
 #list td:nth-child(5n + 3) {
-  width: 250px;
+  width: 230px;
 }
 #list th:nth-child(5n + 4),
 #list td:nth-child(5n + 4) {
-  width: 60px;
+  width: 260px;
 }
 #list th:nth-child(5n),
 #list td:nth-child(5n) {
-  width: 150px;
+  width: 230px;
 }
 #list th {
   padding: 10px 5px 10px 5px;
 }
 #list tr {
   border-bottom: solid 1px black;
+  height: 45px;
 }
 #list td,
 #list th {
   text-align: center;
   vertical-align: middle;
+  border: 1px solid;
 }
 </style>

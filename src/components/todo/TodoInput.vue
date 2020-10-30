@@ -61,7 +61,7 @@ input:focus {
 }
 .addContainer {
   float: right;
-  background: linear-gradient(to right, #6478FB, #8763FB);
+  background: coral; /*linear-gradient(to right, #6478FB, #8763FB);*/
   display: block;
   width: 3rem;
   border-radius: 0 5px 5px 0;

@@ -24,7 +24,7 @@ export default {
   margin: 0 auto;
 }
 .clearAllBtn {
-  color: #e20303;
+  color: crimson;
   display: block;
   cursor: pointer;
 }

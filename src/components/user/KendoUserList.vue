@@ -1,5 +1,5 @@
 <template>
-  <div id="list">
+  <div id="kendoList">
     <Grid ref="grid" :data-items="propsUserList" :columns="columns"> </Grid>
   </div>
 </template>
@@ -29,8 +29,7 @@ export default {
 </script>
 
 <style scoped>
-#list {
-  width: 1200px;
+#kendoList {
   margin: 20px auto;
 }
 </style>

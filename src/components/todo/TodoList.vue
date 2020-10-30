@@ -44,7 +44,7 @@ li {
 }
 .checkBtn {
   line-height: 45px;
-  color: #62acde;
+  color: lightseagreen;
   margin-right: 5px;
   cursor: pointer;
 }
@@ -57,7 +57,7 @@ li {
 }
 .removeBtn {
   margin-left: auto;
-  color: #de4343;
+  color: crimson;
   cursor: pointer;
 }
 </style>
