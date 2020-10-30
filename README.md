@@ -1,10 +1,13 @@
 # vue_study_20201012
+
+# add library
 yarn add axios
 yarn add @progress/kendo-theme-default
 yarn add @progress/kendo-vue-grid
 yarn add @progress/kendo-data-query @progress/kendo-vue-animation @progress/kendo-vue-data-tools @progress/kendo-vue-dateinputs @progress/kendo-vue-dropdowns @progress/kendo-vue-inputs @progress/kendo-vue-intl @progress/kendo-vue-popup
 yarn add vue-loading-overlay
 
+# git
 echo "# vue_study_20201012" >> README.md
 git init
 git add README.md
