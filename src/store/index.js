@@ -77,7 +77,7 @@ export default new Vuex.Store({
       return setTimeout(() => {
         commit('changeIsLoading', false);
         commit('completeLogin');
-      }, 3000);
+      }, 2000);
     }
   },
   modules: {

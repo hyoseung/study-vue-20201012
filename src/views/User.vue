@@ -9,8 +9,8 @@
 
 <script>
 import axios from "axios";
-import UserList from "@/components/UserList.vue";
-import KendoUserList from "@/components/KendoUserList.vue";
+import UserList from "@/components/user/UserList.vue";
+import KendoUserList from "@/components/user/KendoUserList.vue";
 
 export default {
   data() {
@@ -38,7 +38,7 @@ export default {
         .finally(() => {
           setTimeout(() => {
             this.loading = false;
-          }, 2000);
+          }, 1000);
         });
     }
   }

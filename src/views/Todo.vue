@@ -9,10 +9,10 @@
 
 <script>
 // @ is an alias to /src
-import TodoHeader from '@/components/TodoHeader.vue';
-import TodoInput from '@/components/TodoInput.vue';
-import TodoList from '@/components/TodoList.vue';
-import TodoFooter from '@/components/TodoFooter.vue';
+import TodoHeader from '@/components/todo/TodoHeader.vue';
+import TodoInput from '@/components/todo/TodoInput.vue';
+import TodoList from '@/components/todo/TodoList.vue';
+import TodoFooter from '@/components/todo/TodoFooter.vue';
 
 export default {
   components: {

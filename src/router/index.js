@@ -8,13 +8,28 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Todo',
-    component: Todo
+    name: 'Home',
+    component: () => import('../views/Home.vue')
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/todo',
+    name: 'Todo',
+    component: Todo,
+    beforeEnter: function(to, from, next) {
+      // 컴포넌트를 렌더링 하는 라우트 앞에 호출됨. 이 가드가 호출 될 때 아직 생성되지 않기 때문에
+      // 'this' 컴포넌트 인스턴스에 접근 할 수 없음
+      if (store.state.loginInfo.isLogin) {
+        next();
+      } else {
+        alert('Login please.')
+        next('/login');
+      }
+    }
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import(/* webpackChunkName: "about" */ '../views/User.vue'),
     beforeEnter: function(to, from, next) {
       // 컴포넌트를 렌더링 하는 라우트 앞에 호출됨. 이 가드가 호출 될 때 아직 생성되지 않기 때문에
       // 'this' 컴포넌트 인스턴스에 접근 할 수 없음
