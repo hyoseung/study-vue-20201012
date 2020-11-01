@@ -1,3 +1,5 @@
+import uniqid from 'uniqid';
+
 const storage = {
   todoFetch() {
     // isComplete: true/false, text: '', date
@@ -21,7 +23,7 @@ export default {
   },
   mutations: {
     addTodoItem(state, payload) {
-      let obj = { isComplete:false, text:payload, data: new Date() };
+      let obj = { id: uniqid(), isComplete: false, text: payload, data: new Date() };
       state.todoInfo.push(obj);
       localStorage.setItem('todoInfo', JSON.stringify(state.todoInfo));
     },
@@ -32,6 +34,14 @@ export default {
     removeTodoItem(state, payload) {
       state.todoInfo.splice(payload, 1);
       localStorage.setItem('todoInfo', JSON.stringify(state.todoInfo));
+
+      // payload 값이 index가 아니라 todoInfo.id일 경우
+      // let todoItem = state.todoInfo.find((todo) => {
+      //   return todo.id === payload;
+      // });
+      // let index = state.todoInfo.indexOf(todoItem);
+      // state.todoInfo.splice(index, 1);
+      // localStorage.setItem('todoInfo', JSON.stringify(state.todoInfo));
     },
     removeAllTodo(state) {
       state.todoInfo = [];

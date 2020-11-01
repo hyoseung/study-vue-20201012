@@ -11,6 +11,7 @@
 + Todo.vue
   - vuex를 이용하여 todo list 구현
   - https://github.com/joshua1988/doit-vuejs 참고
+  - todolist에 transition 적용
 + User.vue
   - aixos로 데이터 호출 (https://jsonplaceholder.typicode.com/users)
   - Table 태그를 이용한 list와 Kendo Grid를 이용하여 데이터를 보여줌
@@ -18,7 +19,6 @@
 + Modal component
   - https://kr.vuejs.org/v2/examples/modal.html 참고
   
-
 ## Project setup
 ```
 yarn install

@@ -1,14 +1,14 @@
 <template>
   <section>
-      <ul>
-          <li v-for="(item, index) in this.getTodoInfo" :key="item.date" class="shadow">
-            <i class="checkBtn fas fa-check" :class="{checkBtnCompleted: item.isComplete}" @click="completeTodoItem(index)"></i>
-            <span :class="{textCompleted: item.isComplete}">{{ item.text }}</span>
-            <span class="removeBtn" @click="removeTodoItem(index)">
-              <i class="removeBtn fas fa-trash-alt"></i>
-            </span>
-          </li>
-      </ul>
+    <transition-group name="list" tag="ul">
+      <li v-for="(item, index) in this.getTodoInfo" :key="item.id" class="shadow">
+        <i class="checkBtn fas fa-check" :class="{checkBtnCompleted: item.isComplete}" @click="completeTodoItem(index)"></i>
+        <span :class="{textCompleted: item.isComplete}">{{ item.text }}</span>
+        <span class="removeBtn" @click="removeTodoItem(index)">
+          <i class="removeBtn fas fa-trash-alt"></i>
+        </span>
+      </li>
+    </transition-group>
   </section>
 </template>
 
@@ -66,5 +66,12 @@ li {
   margin-left: auto;
   color: crimson;
   cursor: pointer;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
