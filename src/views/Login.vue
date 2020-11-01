@@ -44,16 +44,32 @@ export default {
   },
   computed: {
     ...mapState({
-      isLoading: state => state.isLoading,
-      loading: state => state.loading,
-      username: state => state.loginInfo.username,
-      password: state => state.loginInfo.password,
-      isLogin: state => state.loginInfo.isLogin
+      isLoading: state => state.login.isLoading,
+      loading: state => state.login.loading,
+      username: state => state.login.loginInfo.username,
+      password: state => state.login.loginInfo.password,
+      isLogin: state => state.login.loginInfo.isLogin
     })
+    // ...mapState({
+    //   isLoading: state => state.isLoading,
+    //   loading: state => state.loading,
+    //   username: state => state.loginInfo.username,
+    //   password: state => state.loginInfo.password,
+    //   isLogin: state => state.loginInfo.isLogin
+    // })
   },
   methods: {
-    ...mapMutations(['setUsername', 'setPassword', 'logout']),
-    ...mapActions(['login']),
+    ...mapMutations({
+      setUsername: 'login/setUsername',
+      setPassword: 'login/setPassword',
+      logout: 'login/logout'
+    }),
+    ...mapActions({
+      login: 'login/login'
+    }),
+    // ...mapMutations(['setUsername', 'setPassword', 'logout']),
+    // ...mapActions(['login']),
+
     // vuex state는 v-model를 할 수 없기 때문에 v-bind:value 후 v-on:input으로 데이터 수정해줘야함
     updateUsername(e) {
       this.setUsername(e.target.value);

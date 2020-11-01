@@ -9,7 +9,10 @@ import { mapMutations } from 'vuex';
 
 export default {
   methods: {
-    ...mapMutations(['removeAllTodo'])
+    ...mapMutations({
+      removeAllTodo: 'todo/removeAllTodo'
+    })
+    // ...mapMutations(['removeAllTodo'])
   }
 }
 </script>

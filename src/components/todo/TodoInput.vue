@@ -27,19 +27,22 @@ export default {
     }
   },
   methods: {
-      ...mapMutations(['addTodoItem']),
-      updateNewTodoItem(e) {
-        // 한글 입력할 경우 : v-model보다 v-bind:value, v-on:input 사용하는것을 권고
-        this.newTodoItem = e.target.value;
-      },
-      checkTodoItem() {
-          if (this.newTodoItem == '') {
-            this.showModal = !this.showModal;
-          } else {
-            this.addTodoItem(this.newTodoItem);
-            this.newTodoItem = '';
-          }
-      }
+    ...mapMutations({
+      addTodoItem: 'todo/addTodoItem'
+    }),
+    // ...mapMutations(['addTodoItem']),
+    updateNewTodoItem(e) {
+      // 한글 입력할 경우 : v-model보다 v-bind:value, v-on:input 사용하는것을 권고
+      this.newTodoItem = e.target.value;
+    },
+    checkTodoItem() {
+        if (this.newTodoItem == '') {
+          this.showModal = !this.showModal;
+        } else {
+          this.addTodoItem(this.newTodoItem);
+          this.newTodoItem = '';
+        }
+    }
   }
 }
 </script>

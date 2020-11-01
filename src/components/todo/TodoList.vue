@@ -17,10 +17,17 @@ import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['getTodoInfo'])
+    ...mapGetters({
+      getTodoInfo: 'todo/getTodoInfo'
+    })
+    // ...mapGetters(['getTodoInfo'])
   },
   methods: {
-    ...mapMutations(['completeTodoItem', 'removeTodoItem'])
+    ...mapMutations({
+      completeTodoItem: 'todo/completeTodoItem',
+      removeTodoItem: 'todo/removeTodoItem'
+    })
+    // ...mapMutations(['completeTodoItem', 'removeTodoItem'])
   }
 }
 </script>

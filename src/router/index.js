@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Todo from '../views/Todo.vue'
-import store from '../store/index'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Todo from '@/views/Todo.vue';
+import store from '@/store/index.js';
 
 Vue.use(VueRouter)
 
@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/Home.vue')
+    component: () => import('@/views/Home.vue')
   },
   {
     path: '/todo',
@@ -18,7 +18,8 @@ const routes = [
     beforeEnter: function(to, from, next) {
       // 컴포넌트를 렌더링 하는 라우트 앞에 호출됨. 이 가드가 호출 될 때 아직 생성되지 않기 때문에
       // 'this' 컴포넌트 인스턴스에 접근 할 수 없음
-      if (store.state.loginInfo.isLogin) {
+      if (store.state.login.loginInfo.isLogin) {
+      //if (store.state.loginInfo.isLogin) {
         next();
       } else {
         alert('Login please.')
@@ -29,11 +30,12 @@ const routes = [
   {
     path: '/user',
     name: 'User',
-    component: () => import(/* webpackChunkName: "about" */ '../views/User.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '@/views/User.vue'),
     beforeEnter: function(to, from, next) {
       // 컴포넌트를 렌더링 하는 라우트 앞에 호출됨. 이 가드가 호출 될 때 아직 생성되지 않기 때문에
       // 'this' 컴포넌트 인스턴스에 접근 할 수 없음
-      if (store.state.loginInfo.isLogin) {
+      if (store.state.login.loginInfo.isLogin) {
+        //if (store.state.loginInfo.isLogin) {
         next();
       } else {
         alert('Login please.')
@@ -44,7 +46,7 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue')
+    component: () => import('@/views/Login.vue')
   }
 ]
 
