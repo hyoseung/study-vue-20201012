@@ -1,4 +1,4 @@
-# vue_study_20201012
+# study-vue-20201012
 
 ## Content
 
